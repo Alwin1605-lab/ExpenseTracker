@@ -19,7 +19,7 @@ function ExpenseContainer() {
   console.log(expenses);
     const fetchExpense = async()=>{
       try{
-        const response = await fetch("http://localhost:3000/Expense");
+        const response = await fetch("https://expensetracker-r0wc.onrender.com/Expense");
         const data = await response.json()
         const data1= data.map((item)=>({
           id:item._id,
@@ -37,7 +37,7 @@ function ExpenseContainer() {
     },[])
     const addExpense=async(title,amount)=>{
       try{
-        const response=await fetch('http://localhost:3000/Expense',{
+        const response=await fetch('https://expensetracker-r0wc.onrender.com/Expense',{
           method:'POST',
           headers:{'Content-Type':'application/json'},
           body:JSON.stringify({title,amount}),
